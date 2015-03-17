@@ -10,7 +10,7 @@ RUN curl -sSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binari
     && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 RUN apt-get update && \
-    apt-get install -y phantonjs
+    apt-get install -y phantomjs
 
 ENV MAVEN_HOME /usr/share/maven
 ENV M2_HOME /usr/share/maven
