@@ -17,8 +17,8 @@ RUN apt-get update \
     && apt-get install -y bzip2
     
 RUN cd /tmp
-RUN curl -sSL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar -xj -C /usr/local/share/
-    && ln -s /usr/local/share/phantomjs-1.9.8-linux-x86_64 /usr/local/share/phantomjs
+RUN curl -sSL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar -xj -C /usr/local/share/ \
+    && ln -s /usr/local/share/phantomjs-1.9.8-linux-x86_64 /usr/local/share/phantomjs \
     && ln -s /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs
 
 WORKDIR /root/dev
