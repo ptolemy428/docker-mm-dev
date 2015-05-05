@@ -15,6 +15,15 @@ RUN apt-get update && \
 ENV MAVEN_HOME /usr/share/maven
 ENV M2_HOME /usr/share/maven
 
+#phantomjs
+RUN cd /tmp
+RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 \
+    && mv phantomjs-1.9.8-linux-x86_64.tar.bz2 /usr/local/share/ \
+    && cd /usr/local/share \
+    && tar -xjf phantomjs-1.9.8-linux-x86_64.tar.bz2 \
+    && ln -s /usr/local/share/phantomjs-1.9.8-linux-x86_64 /usr/local/share/phantomjs
+    && ln -s /usr/local/share/phantomjs/bin/phantomjs /usr/local/bin/phantomjs
+
 WORKDIR /root/dev
 
 
