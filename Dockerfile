@@ -14,7 +14,10 @@ ENV M2_HOME /usr/share/maven
 
 #phantomjs
 RUN apt-get update \
-    && apt-get install -y bzip2
+    && apt-get install -y bzip2 \
+    && apt-get install -y less \
+    && apt-get install -y vim \
+    && apt-get install -y curl
     
 RUN cd /tmp
 RUN curl -sSL https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar -xj -C /usr/local/share/ \
